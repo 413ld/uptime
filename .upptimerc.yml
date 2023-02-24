@@ -1,21 +1,42 @@
 # Change these first
 owner: 413ld
 repo: uptime
-
+user-agent: 413ld
 sites:
   - name: SVD
     url: https://www.svd.se
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 404  
   - name: SJ
     url: https://www.sj.se
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 404
   - name: Arlanda
     url: https://www.arlanda.se
-
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 404
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
 status-website:
   baseUrl: /uptime # where "repo" is your repository name
   name: Uptime
+  theme: dark
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
+  introMessage: This is a sample status page which uses **real-time** data from our [Github repository](https://github.com/koj-co/upptime). No server required — just GitHub Actions, Issues, and Pages.    
+      
+
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
